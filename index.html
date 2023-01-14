@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Mesaje de Revelion personalizate</Title>
+        <link rel="icon" type="image/x-icon" href="/images/sampanie.ico">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <!-- Google Fonts Roboto -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+        <!-- MDB -->
+        <link rel="stylesheet" href="./css/mdb.min.css" />
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+        <header>
+          
+            <!-- Background image -->
+            <div
+              class="p-5 text-center bg-image"
+              style="
+                background-image: url('./images/IMG_0872.jpg');
+                height: 400px;
+                background-position: center 0;
+              "
+            >
+              <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                  <div class="text-white">
+                    <h1 class="mb-3">Mesaje personalizate de Revelion</h1>
+                    <!-- <h4 class="mb-3">Să nu uităm că cele mai placute momente sunt alături de cei dragi și cum acest lucru nu trebuie uitat nici în perioada sărbătorilor, vă invit să creați cateva poze cu mesajele voastre pesonalizate cu ajutorul cărora veți reuși să îi surprindeți pe cei dragi cu multă iubire!</h4> -->
+                    <a class="btn btn-outline-light btn-lg" href="#image-selector-wrapper" role="button"
+                    >Personalizeaza mesaj!</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Background image -->
+          </header>
+
+       
+
+        <section id="info-steps" class="text-center">
+            <h2 class="py-5">Cum personalizezi mesajele:</h2>
+            <div class="row bg-light mb-3">
+                <div class="col-md-4 col-sm-12">
+                    <p>1. Selectezi o imagine pe care vrei sa o personalizezi</p>
+                    <img class="img-fluid" src="./images/image-select.PNG" />
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <p>2. Adaugi text pe imagine si il pozitionezi unde doresti</p>
+                    <img class="img-fluid" src="./images/add-text-to-image.PNG" />
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <p>3. Descarci imaginea personalizata</p>
+                    <img class="img-fluid" src="./images/image-download.PNG" />
+                </div>
+            </div>
+        </section>
+
+
+        <section>
+            <!-- <article class="mesaje">
+                    <h1>Mesaje personalizate de Revelion</h1>
+                    <p>Să nu uităm că cele mai placute momente sunt alături de cei dragi și cum acest lucru nu trebuie uitat nici în perioada sărbătorilor, vă invit să creați cateva poze cu mesajele voastre pesonalizate cu ajutorul cărora veți reuși să îi surprindeți pe cei dragi cu multă iubire! </p>
+                    <img src="/images/IMG_0814.jpg" alt="visatoare" class="poza">
+            </article> -->
+        </section>
+
+        <section id="image-selector-info" class="text-center py-5">
+            <h3>Mai jos veti găsi mai multe poze în care veți adăuga textul vostru și le puteți personaliza!</h1>
+        </section>
+        
+
+        <div id="image-selector-wrapper" class="row row-cols-1 row-cols-md-3 g-4">
+
+        </div>
+
+        <div id="canvas-wrapper">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div id="actions">
+            <div class="row text-center py-2">
+                <div class="col-md-10">
+                    <div class="form-outline">
+                        <input type="text" id="addTextInp" class="form-control" />
+                      </div>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" id="addTextBtn" class="btn btn-primary">Adauga text</button>
+                </div>
+            </div>
+
+            <div class="row text-center py-2">
+                <div class="col-md-6">
+                    <input id="textColorInp" type="color"
+                        value="#969ADD">
+                    <label for="textColorInp">Culoare text</label>
+                    <button type="button" id="textColorBtn" class="btn btn-primary">Seteaza culoare text</button>
+                </div>
+                <div class="col-md-6">
+                    <input type="color" id="strokeColorInp"
+                        value="#ffffff">
+                    <label for="strokeColorInp">Culoare contur</label>
+                    <button type="button" id="strokeColorBtn" class="btn btn-primary">Seteaza culoare contur</button>
+                </div>
+            </div>
+
+            <div class="row text-center py-2">
+                <div class="col-md-12">
+                    <a type="button" id="lnkDownload" class="btn btn-info">Descarca imaginea</a>
+                </div>
+            </div>
+
+        </div>
+        <footer class="text-center text-lg-start bg-light text-muted" style="background-color: rgba(0, 0, 0, 0.05);">
+            <!-- Copyright -->
+            <div class="text-center p-4">
+                Miha's creations
+            </div>
+            <!-- Copyright -->
+          </footer>
+        <!-- FabricJs -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.js" integrity="sha512-hOJ0mwaJavqi11j0XoBN1PtOJ3ykPdP6lp9n29WVVVVZxgx9LO7kMwyyhaznGJ+kbZrDN1jFZMt2G9bxkOHWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+       
+        <!-- MDB -->
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <!-- Custom scripts -->
+        <script src="./js/script.js"></script>
+    </body>
+
+
+</html>
